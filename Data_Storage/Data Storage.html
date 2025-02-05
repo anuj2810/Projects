@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Manager</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: skyblue;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, textarea, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .resume-list {
+            margin-top: 20px;
+        }
+        .resume-item {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .resume-item button {
+            margin-top: 10px;
+            background-color: #dc3545;
+        }
+        .resume-item button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;"> Data Storage </h2>
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <input type="text" id="email" placeholder="Enter Your Email">
+        <textarea id="skills" placeholder="Enter Your Skills (comma separated)"></textarea>
+        <button onclick="addResume()">Save Resume</button>
+        <div class="resume-list" id="resumeList"></div>
+    </div>
+    
+    <script>
+        function addResume() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let skills = document.getElementById('skills').value;
+            
+            if (name && email && skills) {
+                let resume = { name, email, skills };
+                let resumes = JSON.parse(localStorage.getItem('resumes')) || [];
+                resumes.push(resume);
+                localStorage.setItem('resumes', JSON.stringify(resumes));
+                displayResumes();
+            }
+        }
+        
+        function displayResumes() {
+            let resumes = JSON.parse(localStorage.getItem('resumes')) || [];
+            let list = document.getElementById('resumeList');
+            list.innerHTML = '';
+            
+            resumes.forEach((resume, index) => {
+                list.innerHTML += `
+                    <div class="resume-item">
+                        <strong>${resume.name}</strong> (${resume.email})
+                        <p>Skills: ${resume.skills}</p>
+                        <button onclick="deleteResume(${index})">Delete</button>
+                    </div>
+                `;
+            });
+        }
+        
+        function deleteResume(index) {
+            let resumes = JSON.parse(localStorage.getItem('resumes')) || [];
+            resumes.splice(index, 1);
+            localStorage.setItem('resumes', JSON.stringify(resumes));
+            displayResumes();
+        }
+        
+        document.addEventListener("DOMContentLoaded", displayResumes);
+    </script>
+</body>
+</html>
