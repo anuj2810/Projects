@@ -1,0 +1,19 @@
+Data Storage
+
+A simple web-based Data Storage that allows users to save, display, and delete resume entries using local storage.
+
+## Features
+- Add Data with **name, email, and skills**.
+- Save data in **local storage**.
+- Display the list of saved resumes dynamically.
+- Delete any resume from the list.
+
+## Technologies Used
+- **HTML**: Structure of the Resume Manager.
+- **CSS**: Styling the UI for a better user experience.
+- **JavaScript**: Functionality to store, retrieve, and delete resumes.
+
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/resume-manager.git
