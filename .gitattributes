@@ -1,1 +1,2 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
+NEWS_DETECTION/ml_model/dataset/*.csv filter=lfs diff=lfs merge=lfs -text
