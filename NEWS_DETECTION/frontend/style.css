@@ -1,0 +1,134 @@
+/* Background Image */
+#background {
+    background-image: url('images/news-background-1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* News Ticker */
+#newsTicker {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Sub Heading */
+h2 {
+    font-size: 2rem;
+    color: rgba(161, 60, 78, 0.923);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Input Container */
+#newsInputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Textarea Styling */
+textarea#newsInput {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    padding: 20px;
+    resize: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+textarea#newsInput:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
+}
+
+/* Button Styling */
+button {
+    background-color: #ffc107;
+    color: #212529;
+    font-size: 1.3rem;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styling */
+#footer {
+    background-color: #343a40;
+    color: white;
+    padding: 30px 0;
+    font-size: 1.1rem;
+    text-align: center;
+    position: relative;
+}
+
+/* Ribbon Styling */
+.ribbon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e0a800;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ribbon Text */
+.ribbon span {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    .card {
+        width: 90%;
+    }
+}
